@@ -11,25 +11,55 @@ var processInfo = function()
 	
     if (firstName == '')
     {
-        $('firstname_errormsg').innerHTML = "Enter First Name";
-        firstnameerror = 1;
+        $('firstnameerrormsg').innerHTML = "Enter First Name";  
     }
 
     if (lastName == '')
     {
-        $('lastname_errormsg').innerHTML = "Enter Last Name";
-        firstnameerror = 1;
+        $('lastnameerrormsg').innerHTML = "Enter Last Name";   
     } 
 
     if (email == '')
     {
-        $('email_errormsg').innerHTML = "Enter Email";
-        firstnameerror = 1;
+        $('emailerrormsg').innerHTML = "Enter Email";
     } 
 
+    var myCity = $("city");
 
+    if(city.value == "-"){
+          // значение
+    }
+    else if(city.value == "Chicago"){
+       // значение 
+    }
+    else if(city.value == "Detroit"){
+       // значение 
+    }
+    else{
+        (city.value =="Toronto"){
+        // значение 
+    }
+
+    if (city == '')
+    {
+        $('cityerror').innerHTML = "Select a City from the list";  
+    }
+
+    var myDonation =$("donation");
+    
+    if (donation == '')
+    {
+        $('donationerror').innerHTML = "Enter Donation Amount";  
+    }
     
 window.onload = function () 
 {
-    $("mybutton").onclick = processInfo;
+    $("button").onclick = addPatron;
+    $("button").onclick = clearFields;
+
+    if (addPatron == '')
+    {
+        $('endmessage').innerHTML = "Patron Not Added";  
+    }
+   
 }

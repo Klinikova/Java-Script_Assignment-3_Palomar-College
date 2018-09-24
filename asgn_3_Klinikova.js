@@ -45,12 +45,13 @@ var processInfo = function()
         $('cityerror').innerHTML = "Select a City from the list";  
     }
 
-    var myDonation =$("donation");
+    var donation = $("donation");
     
-    if (donation == '')
-    {
-        $('donationerror').innerHTML = "Enter Donation Amount";  
-    }
+            if (donation == '')
+            {
+                $('donationerror').innerHTML = "Enter Donation Amount";  
+            }
+    
     
 window.onload = function () 
 {

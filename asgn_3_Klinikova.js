@@ -9,42 +9,31 @@ var processInfo = function()
     var lastName = $('lastname').value;
     var email = $('email').value;
 	
-    if (firstName == '')
+        if (firstName == '')
+        {
+            $('firstnameerrormsg').innerHTML = "Enter First Name";  
+        }
+
+        if (lastName == '')
+        {
+            $('lastnameerrormsg').innerHTML = "Enter Last Name";   
+        } 
+
+        if (email == '')
+        {
+            $('emailerrormsg').innerHTML = "Enter Email";
+        } 
+
+
+    var alertCity = function()
     {
-        $('firstnameerrormsg').innerHTML = "Enter First Name";  
-    }
+        var myCity = $("city").value;
 
-    if (lastName == '')
-    {
-        $('lastnameerrormsg').innerHTML = "Enter Last Name";   
-    } 
-
-    if (email == '')
-    {
-        $('emailerrormsg').innerHTML = "Enter Email";
-    } 
-
-    var myCity = $("city");
-
-    if(city.value == "-"){
-          // значение
+        if (city == '')
+        {
+            $('cityerror').innerHTML = "Select a City from the list";  
+        }
     }
-    else if(city.value == "Chicago"){
-       // значение 
-    }
-    else if(city.value == "Detroit"){
-       // значение 
-    }
-    else{
-        (city.value =="Toronto"){
-        // значение 
-    }
-
-    if (city == '')
-    {
-        $('cityerror').innerHTML = "Select a City from the list";  
-    }
-
     var donation = $("donation");
     
             if (donation == '')
@@ -53,14 +42,16 @@ var processInfo = function()
             }
     
     
-window.onload = function () 
-{
-    $("button").onclick = addPatron;
-    $("button").onclick = clearFields;
-
-    if (addPatron == '')
+    window.onload = function () 
     {
-        $('endmessage').innerHTML = "Patron Not Added";  
+        $("city").onchange = alertCity;
+        $("button").onclick = addPatron;
+        $("button").onclick = clearFields;
+
+        if (addPatron == '')
+        {
+            $('endmessage').innerHTML = "Patron Not Added";  
+        }
+    
     }
-   
 }

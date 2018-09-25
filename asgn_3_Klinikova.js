@@ -41,10 +41,6 @@ var processInfo = function()
         {
             $('donationerror').innerHTML = "Enter Donation Amount";  
         }
-
-        function checkNumber()
-        var userInt = parseInt(userResponse);
-        alert("Amount must be numeric");
     
     
     window.onload = function () 

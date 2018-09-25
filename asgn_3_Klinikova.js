@@ -34,12 +34,17 @@ var processInfo = function()
             $('cityerror').innerHTML = "Select a City from the list";  
         }
     }
+    
     var donation = $("donation");
     
-            if (donation == '')
-            {
-                $('donationerror').innerHTML = "Enter Donation Amount";  
-            }
+        if (donation == '')
+        {
+            $('donationerror').innerHTML = "Enter Donation Amount";  
+        }
+
+        function checkNumber()
+        var userInt = parseInt(userResponse);
+        alert("Amount must be numeric");
     
     
     window.onload = function () 

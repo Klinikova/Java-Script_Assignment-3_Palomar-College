@@ -3,7 +3,7 @@ var $ = function (id)
     return document.getElementById(id);
 }
 
-var processInfo = function()
+function processInfo()
 {
     var firstName = $('firstname').value;
     var lastName = $('lastname').value;
@@ -41,12 +41,16 @@ var processInfo = function()
         {
             $('donationerror').innerHTML = "Enter Donation Amount";  
         }
+
+        //function checkNumber()
+        //var userInt = parseInt(userResponse);
+        //alert("Amount must be numeric");
     
     
     window.onload = function () 
     {
         $("city").onchange = alertCity;
-        $("button").onclick = addPatron;
+        $("button").onclick = processInfo();
         $("button").onclick = clearFields;
 
         if (addPatron == '')

@@ -9,6 +9,10 @@ body {
     margin: 8px;
 }
 
+span {
+    color: red;
+}
+
 #patron {
     background-color: lightblue;
     width: 780px;

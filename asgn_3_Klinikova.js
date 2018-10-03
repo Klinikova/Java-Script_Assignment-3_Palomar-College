@@ -50,14 +50,14 @@ function clearFields(){
     
 window.onload = function () 
 {
-  console.log("window load");
+  //console.log("window load");
 
    var alertCity = function()
     {
-        var myCity = $("city").value;
+        var myCity = $('city').value;
         
 
-        if (city == '')
+        if (myCity == '')
         {
             $('cityerror').innerHTML = "Select a City from the list";
             
@@ -66,12 +66,22 @@ window.onload = function ()
    
   $('addpatron').onclick = processInfo;
   $('clearfields').onclick = clearFields;
-  $('city').onchange = alertCity;
+  $('city').select = alertCity;
 
-  //if (addPatron == '')
+  if (addPatron == '')
+  {
+        $('endmessage').innerHTML = "Patron Not Added";  
+  }
+
+  //function validateItems()
   //{
-   //$('endmessage').innerHTML = "Patron Not Added";  
+      //if(myform.indexOf() == 0)
+      //{
+            //alert('http://profperry.com/Classes20/JQueryNew/Assignment_3_PHP/assignment_3.php');
+            //myform.focus();
+            //return false;
+      //}
+      //return true;
   //}
-
 
 }

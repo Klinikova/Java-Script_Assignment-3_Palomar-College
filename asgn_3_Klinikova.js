@@ -12,19 +12,24 @@ function processInfo()
     var email = $('email').value;
 	
   //console.log("FName" + firstName);
+        var error = 0;
         if (firstName == '')
         {
-            $('firstnameerror').innerHTML = "Enter First Name";  
+            $('firstnameerror').innerHTML = "Enter First Name";
+            error=1;  
         }
 
         if (lastName == '')
         {
-            $('lastnameerror').innerHTML = "Enter Last Name";   
+            $('lastnameerror').innerHTML = "Enter Last Name";
+            
+            error =1;
         } 
 
         if (email == '')
         {
             $('emailerror').innerHTML = "Enter Email";
+            error= 1;
         } 
 
 
@@ -33,12 +38,32 @@ function processInfo()
     
         if (donation == '')
         {
-            $('donationerror').innerHTML = "Enter Donation Amount";  
+            $('donationerror').innerHTML = "Enter Donation Amount";
+            error =1;  
         }
 
         if(isNaN(donation))
         {
             $('donationerror').innerHTML = "Amount must be numeric";
+            error = 1;
+        }
+        
+        var city = $('city').value;
+        
+        console.log('city selection: ' + city);
+        if (city == '-')
+        {
+            $('cityerror').innerHTML = "Select a City from the list";
+            error= 1;
+        }
+
+         if (error == 1)
+        {
+            $('endmessage').innerHTML = "Patron Not Added";  
+        } 
+        else 
+        {
+           $('myform').submit();
         }
 
 } 
@@ -56,8 +81,8 @@ window.onload = function ()
     {
         var myCity = $('city').value;
         
-
-        if (myCity == '')
+        console.log('city selection: ' + myCity);
+        if (myCity == '-')
         {
             $('cityerror').innerHTML = "Select a City from the list";
             
@@ -66,12 +91,12 @@ window.onload = function ()
    
   $('addpatron').onclick = processInfo;
   $('clearfields').onclick = clearFields;
-  $('city').select = alertCity;
+  $('city').onchange = alertCity;
 
-  if (addPatron == '')
-  {
-        $('endmessage').innerHTML = "Patron Not Added";  
-  }
+  //if (addPatron == '')
+  //{
+    //    $('endmessage').innerHTML = "Patron Not Added";  
+ // }
 
   //function validateItems()
   //{

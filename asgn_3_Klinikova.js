@@ -1,4 +1,3 @@
-
 var $ = function (id) 
 {
     return document.getElementById(id);
@@ -21,8 +20,7 @@ function processInfo()
 
         if (lastName == '')
         {
-            $('lastnameerror').innerHTML = "Enter Last Name";
-            
+            $('lastnameerror').innerHTML = "Enter Last Name";   
             error =1;
         } 
 
@@ -33,7 +31,6 @@ function processInfo()
         } 
 
 
-    
     var donation = $("donation").value;
     
         if (donation == '')
@@ -50,7 +47,7 @@ function processInfo()
         
         var city = $('city').value;
         
-        console.log('city selection: ' + city);
+       
         if (city == '-')
         {
             $('cityerror').innerHTML = "Select a City from the list";
@@ -75,8 +72,7 @@ function clearFields(){
     
 window.onload = function () 
 {
-  //console.log("window load");
-
+ 
    var alertCity = function()
     {
         var myCity = $('city').value;
@@ -91,22 +87,6 @@ window.onload = function ()
    
   $('addpatron').onclick = processInfo;
   $('clearfields').onclick = clearFields;
-  $('city').onchange = alertCity;
-
-  //if (addPatron == '')
-  //{
-    //    $('endmessage').innerHTML = "Patron Not Added";  
- // }
-
-  //function validateItems()
-  //{
-      //if(myform.indexOf() == 0)
-      //{
-            //alert('http://profperry.com/Classes20/JQueryNew/Assignment_3_PHP/assignment_3.php');
-            //myform.focus();
-            //return false;
-      //}
-      //return true;
-  //}
+  $('city').onchange = alertCity
 
 }

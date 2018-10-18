@@ -87,6 +87,6 @@ window.onload = function ()
    
   $('addpatron').onclick = processInfo;
   $('clearfields').onclick = clearFields;
-  $('city').onchange = alertCity
+  $('city').onchange = alertCity;
 
 }
